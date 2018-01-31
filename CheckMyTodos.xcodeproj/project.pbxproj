@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F6CE47F20220157005C90CC /* TodoClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CE47E20220157005C90CC /* TodoClass.m */; };
 		0FD9785A201F49330005BF71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD97859201F49330005BF71 /* AppDelegate.m */; };
 		0FD9785D201F49330005BF71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD9785C201F49330005BF71 /* ViewController.m */; };
 		0FD97860201F49330005BF71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD9785E201F49330005BF71 /* Main.storyboard */; };
 		0FD97862201F49330005BF71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FD97861201F49330005BF71 /* Assets.xcassets */; };
 		0FD97865201F49330005BF71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD97863201F49330005BF71 /* LaunchScreen.storyboard */; };
 		0FD97868201F49330005BF71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD97867201F49330005BF71 /* main.m */; };
+		0FD97870201F4CA50005BF71 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD9786F201F4CA50005BF71 /* Model.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F6CE47D20220157005C90CC /* TodoClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodoClass.h; sourceTree = "<group>"; };
+		0F6CE47E20220157005C90CC /* TodoClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodoClass.m; sourceTree = "<group>"; };
 		0FD97855201F49330005BF71 /* CheckMyTodos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckMyTodos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD97858201F49330005BF71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0FD97859201F49330005BF71 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 		0FD97864201F49330005BF71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FD97866201F49330005BF71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FD97867201F49330005BF71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0FD9786E201F4CA50005BF71 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		0FD9786F201F4CA50005BF71 /* Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,10 @@
 				0FD9785B201F49330005BF71 /* ViewController.h */,
 				0FD9785C201F49330005BF71 /* ViewController.m */,
 				0FD9785E201F49330005BF71 /* Main.storyboard */,
+				0FD9786E201F4CA50005BF71 /* Model.h */,
+				0F6CE47D20220157005C90CC /* TodoClass.h */,
+				0F6CE47E20220157005C90CC /* TodoClass.m */,
+				0FD9786F201F4CA50005BF71 /* Model.m */,
 				0FD97861201F49330005BF71 /* Assets.xcassets */,
 				0FD97863201F49330005BF71 /* LaunchScreen.storyboard */,
 				0FD97866201F49330005BF71 /* Info.plist */,
@@ -144,7 +154,9 @@
 			files = (
 				0FD9785D201F49330005BF71 /* ViewController.m in Sources */,
 				0FD97868201F49330005BF71 /* main.m in Sources */,
+				0F6CE47F20220157005C90CC /* TodoClass.m in Sources */,
 				0FD9785A201F49330005BF71 /* AppDelegate.m in Sources */,
+				0FD97870201F4CA50005BF71 /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +291,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PD8D79ZJR7;
+				DEVELOPMENT_TEAM = 3SHKXELC2M;
 				INFOPLIST_FILE = CheckMyTodos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RK.CheckMyTodos;
@@ -293,7 +305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PD8D79ZJR7;
+				DEVELOPMENT_TEAM = 3SHKXELC2M;
 				INFOPLIST_FILE = CheckMyTodos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RK.CheckMyTodos;
