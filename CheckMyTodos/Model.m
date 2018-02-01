@@ -32,10 +32,9 @@
             self.todoList = @[@"Hund", @"Vaska Skump", @"Köra hoj"].mutableCopy;
         }
     }
-    
+
     return self;
 }
-
 
 -(NSMutableArray*) getList{
     NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];

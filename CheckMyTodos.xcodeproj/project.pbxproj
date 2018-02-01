@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F6CE47F20220157005C90CC /* TodoClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CE47E20220157005C90CC /* TodoClass.m */; };
+		0F6CE48220228C91005C90CC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6CE48120228C91005C90CC /* DetailViewController.m */; };
 		0FD9785A201F49330005BF71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD97859201F49330005BF71 /* AppDelegate.m */; };
 		0FD9785D201F49330005BF71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD9785C201F49330005BF71 /* ViewController.m */; };
 		0FD97860201F49330005BF71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD9785E201F49330005BF71 /* Main.storyboard */; };
@@ -20,6 +21,8 @@
 /* Begin PBXFileReference section */
 		0F6CE47D20220157005C90CC /* TodoClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodoClass.h; sourceTree = "<group>"; };
 		0F6CE47E20220157005C90CC /* TodoClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodoClass.m; sourceTree = "<group>"; };
+		0F6CE48020228C91005C90CC /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		0F6CE48120228C91005C90CC /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		0FD97855201F49330005BF71 /* CheckMyTodos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckMyTodos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD97858201F49330005BF71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0FD97859201F49330005BF71 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -69,9 +72,11 @@
 				0FD9785B201F49330005BF71 /* ViewController.h */,
 				0FD9785C201F49330005BF71 /* ViewController.m */,
 				0FD9785E201F49330005BF71 /* Main.storyboard */,
-				0FD9786E201F4CA50005BF71 /* Model.h */,
+				0F6CE48020228C91005C90CC /* DetailViewController.h */,
+				0F6CE48120228C91005C90CC /* DetailViewController.m */,
 				0F6CE47D20220157005C90CC /* TodoClass.h */,
 				0F6CE47E20220157005C90CC /* TodoClass.m */,
+				0FD9786E201F4CA50005BF71 /* Model.h */,
 				0FD9786F201F4CA50005BF71 /* Model.m */,
 				0FD97861201F49330005BF71 /* Assets.xcassets */,
 				0FD97863201F49330005BF71 /* LaunchScreen.storyboard */,
@@ -157,6 +162,7 @@
 				0F6CE47F20220157005C90CC /* TodoClass.m in Sources */,
 				0FD9785A201F49330005BF71 /* AppDelegate.m in Sources */,
 				0FD97870201F4CA50005BF71 /* Model.m in Sources */,
+				0F6CE48220228C91005C90CC /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

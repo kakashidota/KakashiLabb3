@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Model.h"
 #import "TodoClass.h"
+#import "DetailViewController.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -25,6 +26,7 @@
 @property(nonatomic) Model *engine;
 @property (nonatomic) NSString *inputText;
 @property (nonatomic)NSMutableArray *syster;
+@property (nonatomic) TodoClass *currentTodo;
 //TODOKLASS RELATED
 
 @end
@@ -80,29 +82,27 @@
 }
 
 - (IBAction)todoPressed:(id)sender {
-    TodoClass *currentTodo =[[TodoClass alloc]initName:self.inputText type:@"todoType" isComplete:NO];
-    [self.engine addItem:currentTodo.name];
+    [self.currentTodo addItem:self.inputText :@"todo"];
+    NSLog(@"tester%@ %@", self.currentTodo.todoItemsArray[0],self.inputText);
     [self loadView];
     self.taskView.hidden = YES;
-}
+    [self.navigationController popViewControllerAnimated:YES];
 
+}
 
 - (IBAction)shopPressed:(id)sender {
     self.shop = YES;
-    TodoClass *currentTodo =[[TodoClass alloc]initName:self.inputText type:@"shopType" isComplete:NO];
-    [self.engine addItem:currentTodo.name];
+    [self.currentTodo addItem:self.inputText :@"shop"];
     [self loadView];
     self.taskView.hidden = YES;
 }
 
 - (IBAction)meetPressed:(id)sender {
     self.meet = YES;
-    TodoClass *currentTodo =[[TodoClass alloc]initName:self.inputText type:@"meetType" isComplete:NO];
-    [self.engine addItem:currentTodo.name];
+    [self.currentTodo addItem:self.inputText :@"todo"];
     [self loadView];
     self.taskView.hidden = YES;
 }
-
 
 
 -(void)loadView{
@@ -129,10 +129,24 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"todoCell" forIndexPath:indexPath];
     
-      cell.textLabel.text = [self.engine.getList objectAtIndex:indexPath.row];
+      cell.textLabel.text = [self.currentTodo.todoItemsArray objectAtIndex:indexPath.row];
     
+        return cell;
+
+    }
     
-    return cell;
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"detailSegue"]) {
+        UITableViewCell *cell = sender;
+        DetailViewController *details = [segue destinationViewController];
+        details.detailedList = self.todoDatabase;
+        int index = (int)[self.tableView indexPathForCell:cell].row;
+        details.detailIndex = index;
+        
+        
+    
+    }
 }
 
 @end

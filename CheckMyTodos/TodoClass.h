@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface TodoClass : NSObject
-@property (nonatomic) NSString *name;
-@property (nonatomic) NSString *type;
-@property (nonatomic) BOOL isComplete;
-- (instancetype)initName:(NSString*)name type:(NSString*)type isComplete:(BOOL)isComplete;
+@property (nonatomic) NSMutableArray *todoItemsArray;
+@property (nonatomic) NSMutableArray *shopItemsArray;
+@property (nonatomic) NSMutableArray *meetItemsArray;
+@property (nonatomic) NSMutableArray *detailedArray;
+
+-(void)addItem:(NSString*)text: (NSString*)identifier;
+
 @end
