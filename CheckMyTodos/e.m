@@ -12,9 +12,10 @@
 #import "ViewController.h"
 
 @interface DetailViewController ()
-@property (nonatomic) TodoClass *currentTodo;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UISwitch *completeSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *importantSwitch;
 @property (nonatomic) Model *engine;
 
 @end
@@ -25,18 +26,40 @@
     [super viewDidLoad];
     self.detailedList = [self.engine getList];
     [self showDetails];
-    // Do any additional setup after loading the view.
+    NSString *temp = [[NSUserDefaults standardUserDefaults] objectForKey:@"description"];
+    [self.textView setText: temp];
+    //self.textView = [[NSUserDefaults standardUserDefaults] objectForKey:@"description"];
+}
+
+- (IBAction)savePressed:(id)sender {
+    NSString *inputtext = self.textView.text;
+    [[NSUserDefaults standardUserDefaults] setObject:inputtext forKey:@"description"];
 }
 
 -(void)showDetails{
     self.textField.text = self.detailedList[self.detailIndex];
     
-    
+}
+- (IBAction)importantSwitch:(id)sender {
+    if (self.arrayIndex != 1){
+        
+        if ([sender isOn]) {
+            [self.currentTodo saveTodos:self.objectIndex arrayIndex:self.arrayIndex];
+            
+        }
+    }
+}
+
+- (IBAction)switchOff:(id)sender {
+    if (self.arrayIndex != 2){
+        if([sender isOn]){
+            [self.currentTodo moveToDone:self.objectIndex arrayIndex:self.arrayIndex];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

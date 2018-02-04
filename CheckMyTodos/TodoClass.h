@@ -10,10 +10,14 @@
 
 @interface TodoClass : NSObject
 @property (nonatomic) NSMutableArray *todoItemsArray;
-@property (nonatomic) NSMutableArray *shopItemsArray;
-@property (nonatomic) NSMutableArray *meetItemsArray;
-@property (nonatomic) NSMutableArray *detailedArray;
+@property (nonatomic) NSMutableArray *importantTodos;
+@property (nonatomic) NSMutableArray *doneTodos;
+-(void)addItem:(NSString*) note;
+-(void)deleteItem:(NSInteger)index;
+-(void)saveTodos :(NSInteger) objectIndex arrayIndex:(NSInteger) arrayIndex;
+-(void) moveToDone :(NSInteger) objectIndex arrayIndex:(NSInteger) arrayIndex;
+-(void)saveLists;
 
--(void)addItem:(NSString*)text: (NSString*)identifier;
+
 
 @end

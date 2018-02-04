@@ -7,11 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "TodoClass.h"
 
 @interface DetailViewController : ViewController
 @property (weak, nonatomic) IBOutlet UITextView *detailView;
 @property (nonatomic) NSMutableArray *detailArray;
 @property (nonatomic) int detailIndex;
-
-
+@property (nonatomic) TodoClass *currentTodo;
+@property (nonatomic) NSInteger objectIndex;
+@property (nonatomic) NSInteger arrayIndex;
 @end

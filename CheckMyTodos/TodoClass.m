@@ -13,43 +13,70 @@
 -(instancetype)init{
     self = [super init];
     if (self) {
-        self.todoItemsArray= [[NSUserDefaults standardUserDefaults]objectForKey:@"todoArray"];
+        self.todoItemsArray = [[[NSUserDefaults standardUserDefaults] objectForKey:@"todoArray"]mutableCopy];
         if (self.todoItemsArray == nil) {
             self.todoItemsArray = [[NSMutableArray alloc] init];
         }
-        
-        if (self) {
-            self.shopItemsArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"shopArray"];
-            if (self.shopItemsArray == nil) {
-                self.shopItemsArray = [[NSMutableArray alloc] init];
-            }
+    }
+    if (self){
+        self.importantTodos = [[[NSUserDefaults standardUserDefaults]objectForKey:@"importantTodos"] mutableCopy];
+        if (self.importantTodos == nil) {
+            self.importantTodos = [[NSMutableArray alloc] init];
         }
-        
-        if(self){
-            self.meetItemsArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"meetArray"];
-            if (self.meetItemsArray == nil) {
-                self.meetItemsArray = [[NSMutableArray alloc] init];
-            }
+    }
+    if (self){
+        self.doneTodos = [[[NSUserDefaults standardUserDefaults]objectForKey:@"doneTodos"]mutableCopy ];
+        if (self.doneTodos == nil) {
+            self.doneTodos = [[NSMutableArray alloc] init];
         }
     }
     return self;
-
 }
 
--(void)addItem:(NSString*)text: (NSString*)identifier{
-    NSLog(@"kommer du hit?");
-    if ([identifier isEqualToString:@"todo"]) {
-        [self.todoItemsArray addObject:text];
-    } else if ([identifier isEqualToString:@"shop"]){
-        [self.shopItemsArray addObject:text];
-    } else if ([identifier isEqualToString:@"meet"]){
-        [self.meetItemsArray addObject:text];
-    }
-    [[NSUserDefaults standardUserDefaults] setObject:self.todoItemsArray forKey:@"todo"];
-    [[NSUserDefaults standardUserDefaults] setObject:self.shopItemsArray forKey:@"shop"];
-    [[NSUserDefaults standardUserDefaults]setObject:self.meetItemsArray forKey:@"meet"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+-(void)addItem:(NSString*) note{
+    [self.todoItemsArray addObject:note];
+    [self saveLists];
+}
 
+-(void)deleteItem:(NSInteger) index{
+    [self.todoItemsArray removeObjectAtIndex:index];
+    [self saveLists];
+}
+-(void) moveToDone :(NSInteger) objectIndex arrayIndex:(NSInteger) arrayIndex{
+    
+        if (arrayIndex == 0) {
+            [self.doneTodos addObject: self.todoItemsArray[objectIndex]];
+            [self.todoItemsArray removeObjectAtIndex:objectIndex];
+        } else if(arrayIndex == 1){
+            [self.doneTodos addObject:self.importantTodos[objectIndex]];
+            [self.importantTodos removeObjectAtIndex:objectIndex];
+        } else if (arrayIndex == 2){
+            [self.doneTodos addObject:self.todoItemsArray[objectIndex]];
+            [self.doneTodos removeObjectAtIndex:objectIndex];
+        }
+        [self saveLists];
+    
+}
+-(void)saveTodos :(NSInteger) objectIndex arrayIndex:(NSInteger) arrayIndex{
+    if (arrayIndex == 0) {
+        [self.importantTodos addObject: self.todoItemsArray[objectIndex]];
+        [self.todoItemsArray removeObjectAtIndex:objectIndex];
+    } else if(arrayIndex == 1){
+        [self.importantTodos addObject:self.importantTodos[objectIndex]];
+        [self.importantTodos removeObjectAtIndex:objectIndex];
+    } else if (arrayIndex == 2){
+        [self.importantTodos addObject:self.todoItemsArray[objectIndex]];
+        [self.doneTodos removeObjectAtIndex:objectIndex];
+    }
+    [self saveLists];
+}
+
+-(void)saveLists{
+
+    [[NSUserDefaults standardUserDefaults] setObject:self.todoItemsArray forKey:@"todoArray"];
+    [[NSUserDefaults standardUserDefaults] setObject:self.importantTodos forKey:@"importantTodos"];
+    [[NSUserDefaults standardUserDefaults] setObject:self.doneTodos forKey:@"doneTodos"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 
 }
 
