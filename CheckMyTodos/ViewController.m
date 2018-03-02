@@ -27,9 +27,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSUserDefaults standardUserDefaults] objectForKey:@"todos"];
+    self.currentTodo = [[TodoClass alloc] init];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.opaque = NO;
-    [[NSUserDefaults standardUserDefaults] objectForKey:@"todos"];
     self.todoArray = [[NSMutableArray alloc] init];
     
 }
